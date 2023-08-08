@@ -5,4 +5,5 @@ describe("MovieList.vue", () => {
   it("emits an event to remove from favourites", () => {});
   it("emits an event to add to watchlist", () => {});
   it("emits an event to remove from watchlist", () => {});
+  it("emits an event to display reviews", () => {});
 });
