@@ -15,5 +15,5 @@ describe("MovieItem.vue", () => {
   it("emits an event to add to watchlist when the add to watchlist button is clicked", () => {});
   it("emits an event to remove from watchlist when the remove from watchlist button is clicked", () => {});
   it("emits an event to display movie details when the see details button is clicked", () => {});
-  it("listens for an event that the movie has been rated", () => {});
+  it("emits an event that the movie has been rated", () => {});
 });
