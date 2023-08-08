@@ -14,5 +14,6 @@ describe("MovieItem.vue", () => {
   it("emits an event to remove from favourites when the remove from favourites button is clicked", () => {});
   it("emits an event to add to watchlist when the add to watchlist button is clicked", () => {});
   it("emits an event to remove from watchlist when the remove from watchlist button is clicked", () => {});
+  it("emits an event to display reviews when the see reviews button is clicked", () => {});
   it("changes the class of the synopsis container to display when the view synopsis button is clicked", () => {});
 });
