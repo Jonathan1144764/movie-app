@@ -1,7 +1,8 @@
 <template>
   <button v-if="movie.isFavourited == false" @click="addFavourite">
-    Add to favourites
+    Add to Favourites
   </button>
+  <button @click="removeFavourite">Remove from Favourites</button>
 </template>
 
 <script>
@@ -25,16 +26,32 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      favourited: false,
+    };
+  },
   methods: {
     addFavourite() {
       this.$emit("addToFavourites", this.movie.id);
-      console.log("clicked");
+      console.log(this.movie.id);
+      this.favourited = true;
     },
     removefavourite() {
-      this.$emit("removeFromFavourites", 0);
+      this.$emit("removeFromFavourites", this.movie.id);
+      console.log(this.movie.id);
+      this.favourited = false;
     },
   },
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.favourited {
+  background-color: #dd000044;
+}
+
+.notFavourited {
+  background-color: #00dd0044;
+}
+</style>
