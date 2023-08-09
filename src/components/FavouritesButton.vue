@@ -2,7 +2,7 @@
   <button v-if="movie.isFavourited == false" @click="addFavourite">
     Add to Favourites
   </button>
-  <button @click="removeFavourite">Remove from Favourites</button>
+  <button v-else @click="removeFavourite">Remove from Favourites</button>
 </template>
 
 <script>
@@ -26,21 +26,14 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      favourited: false,
-    };
-  },
   methods: {
     addFavourite() {
       this.$emit("addToFavourites", this.movie.id);
       console.log(this.movie.id);
-      this.favourited = true;
     },
-    removefavourite() {
+    removeFavourite() {
       this.$emit("removeFromFavourites", this.movie.id);
       console.log(this.movie.id);
-      this.favourited = false;
     },
   },
 };
