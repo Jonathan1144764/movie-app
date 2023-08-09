@@ -8,6 +8,26 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      moviesFavourited: 0,
+      moviesFavouritedList: [],
+      moviesToWatch: 0,
+      moviesToWatchList: [],
+      movies: [
+        {
+          id: 1,
+          name: "Monty Python and the Holy Grail",
+          year: 1975,
+          director: "Terry Gilliam",
+          isFavourited: false,
+          isToWatch: false,
+          rating: [],
+          synopsis:"King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles."
+        }
+      ]
+    }
+  },
   components: {
     HelloWorld,
   },
