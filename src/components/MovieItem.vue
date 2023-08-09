@@ -1,10 +1,15 @@
 <template>
-  <img :src="movie.poster" alt="" />
-  <FavouritesButton></FavouritesButton>
+  <div class="movie">
+    <img :src="movie.poster" alt="" />
+    <h3>{{ movie.title }}</h3>
+    <FavouritesButton class="btn"></FavouritesButton>
+    <WatchlistButton class="btn"></WatchlistButton>
+  </div>
 </template>
 
 <script>
 import FavouritesButton from "./FavouritesButton.vue";
+import WatchlistButton from "./WatchlistButton.vue";
 
 export default {
   name: "MovieItem",
@@ -14,7 +19,7 @@ export default {
       default() {
         return {
           id: 0,
-          name: "Default",
+          title: "Default",
           year: 1900,
           director: "D Fault",
           poster: "https://placehold.co/200x300/55ffcc/000",
@@ -28,8 +33,21 @@ export default {
   },
   components: {
     FavouritesButton,
+    WatchlistButton,
   },
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+img {
+  display: inline-block;
+}
+
+.btn {
+  margin: 0 1rem;
+}
+
+.movie {
+  position: relative;
+}
+</style>

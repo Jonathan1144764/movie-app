@@ -19,7 +19,7 @@ export default {
       movies: [
         {
           id: 1,
-          name: "Monty Python and the Holy Grail",
+          title: "Monty Python and the Holy Grail",
           year: 1975,
           director: "Terry Gilliam",
           poster: "https://placehold.co/200x300/55ffcc/000",
