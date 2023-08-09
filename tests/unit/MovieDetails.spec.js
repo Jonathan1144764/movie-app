@@ -1,7 +1,7 @@
-import { shallowMount } from "@vue/test-utils";
+// import { shallowMount } from "@vue/test-utils";
 
-describe("MovieDetails.vue", () => {
-  it("displays props", () => {});
-  it("listens for an event to display movie details", () => {});
-  it("hides movie detials when the close button is clicked", () => {});
-});
+// describe("MovieDetails.vue", () => {
+//   it("displays props", () => {});
+//   it("listens for an event to display movie details", () => {});
+//   it("hides movie detials when the close button is clicked", () => {});
+// });

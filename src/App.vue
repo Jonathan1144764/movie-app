@@ -1,10 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
   name: "App",
@@ -20,16 +20,18 @@ export default {
           name: "Monty Python and the Holy Grail",
           year: 1975,
           director: "Terry Gilliam",
+          poster: "https://placehold.co/400x600/55ff00/000",
           isFavourited: false,
           isToWatch: false,
           rating: [],
-          synopsis:"King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles."
-        }
-      ]
-    }
+          synopsis:
+            "King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles.",
+        },
+      ],
+    };
   },
   components: {
-    HelloWorld,
+    // HelloWorld,
   },
 };
 </script>
