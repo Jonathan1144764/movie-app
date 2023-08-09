@@ -2,7 +2,7 @@
   <div class="movie">
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
-    <FavouritesButton class="btn"></FavouritesButton>
+    <FavouritesButton :movie="movie" class="btn"></FavouritesButton>
     <WatchlistButton class="btn"></WatchlistButton>
   </div>
 </template>
