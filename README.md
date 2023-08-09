@@ -3,7 +3,7 @@
 ## Project description
 
 This project is meant as a platform where users can share their interest in movies. Users will have the opportunity to create a list of their favourite movies,
-and they'll be able able to add movie to their to-watch list. Users will be able to show each other what movies they like and what movies they're interested in seeing.
+and they'll be able able to add movie to their to-watch list. Users will be able to show each other what movies they like and what movies they're interested in seeing. They can also leave ratings on movies they like... or not.
 
 ## Project inspiration
 
@@ -11,9 +11,9 @@ This project was inspired by letterboxd.com.
 
 ## Project functionality
 
-Users will be presented with a list of movies that they can view. Each movie will have the option to view the movie's synopsis,
-add that movie to the user's favourites list, or add the movie to the user's watchlist.
-Viewing the synopsis will reveal a container beneath the movie card.
+Users will be presented with a list of movies that they can view. Each movie will have the option to view the movie's synopsis and rating,
+add that movie to the user's favourites list, add the movie to the user's watchlist, and rate the movie on a system of five stars.
+Viewing the movie details will reveal a container positioned on top of the movie card.
 
 ## Project tests
 
