@@ -22,7 +22,7 @@ export default {
           name: "Monty Python and the Holy Grail",
           year: 1975,
           director: "Terry Gilliam",
-          poster: "https://placehold.co/400x600/55ff00/000",
+          poster: "https://placehold.co/200x300/55ffcc/000",
           isFavourited: false,
           isToWatch: false,
           rating: [],

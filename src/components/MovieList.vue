@@ -1,4 +1,5 @@
 <template>
+  <h2>All Movies</h2>
   <div class="movie-list">
     <MovieItem
       v-for="movie in movies"
@@ -27,4 +28,4 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss"></style>
