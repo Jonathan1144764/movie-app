@@ -1,18 +1,16 @@
 <template>
-
-    <FavoriteButton></FavoriteButton>
+  <FavouritesButton></FavouritesButton>
 </template>
 
 <script>
 import FavouritesButton from "./FavouritesButton.vue";
 
 export default {
-    name: "MovieItem",
-    components: {
-        FavouritesButton,
-    },
-    
-}
+  name: "MovieItem",
+  components: {
+    FavouritesButton,
+  },
+};
 </script>
 
 <style></style>
