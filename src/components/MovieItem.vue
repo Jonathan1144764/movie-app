@@ -3,7 +3,7 @@
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
     <FavouritesButton :movie="movie" class="btn"></FavouritesButton>
-    <WatchlistButton class="btn"></WatchlistButton>
+    <WatchlistButton :movie="movie" class="btn"></WatchlistButton>
   </div>
 </template>
 

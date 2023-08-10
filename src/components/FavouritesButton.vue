@@ -29,22 +29,12 @@ export default {
   methods: {
     addFavourite() {
       this.$emit("addToFavourites", this.movie.id);
-      console.log(this.movie.id);
     },
     removeFavourite() {
       this.$emit("removeFromFavourites", this.movie.id);
-      console.log(this.movie.id);
     },
   },
 };
 </script>
 
-<style scoped lang="scss">
-.favourited {
-  background-color: #dd000044;
-}
-
-.notFavourited {
-  background-color: #00dd0044;
-}
-</style>
+<style scoped lang="scss"></style>
