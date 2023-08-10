@@ -7,6 +7,7 @@
       :movie="movie"
       class="btn"
       @addToWatchlist="addToWatchlist"
+      @removeFromWatchlist="removeFromWatchlist"
     ></WatchlistButton>
   </div>
 </template>
@@ -42,7 +43,9 @@ export default {
   methods: {
     addToWatchlist(id) {
       this.$emit("addToWatchlist", id);
-      console.log("arrived");
+    },
+    removeFromWatchlist(id) {
+      this.$emit("removeFromWatchlist", id);
     },
   },
 };

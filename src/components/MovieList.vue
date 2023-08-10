@@ -6,6 +6,7 @@
       :movie="movie"
       :key="movie.id"
       @addToWatchlist="addToWatchlist"
+      @removeFromWatchlist="removeFromWatchlist"
     ></MovieItem>
   </div>
 </template>
@@ -29,7 +30,9 @@ export default {
   methods: {
     addToWatchlist(id) {
       this.$emit("addToWatchlist", id);
-      console.log("arrived2");
+    },
+    removeFromWatchlist(id) {
+      this.$emit("removeFromWatchlist", id);
     },
   },
 };

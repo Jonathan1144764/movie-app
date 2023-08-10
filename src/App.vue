@@ -1,7 +1,11 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-  <MovieList :movies="movies" @addToWatchlist="addToWatchlist"></MovieList>
+  <MovieList
+    :movies="movies"
+    @addToWatchlist="addToWatchlist"
+    @removeFromWatchlist="removeFromWatchlist"
+  ></MovieList>
 </template>
 
 <script>
@@ -38,11 +42,16 @@ export default {
   },
   methods: {
     addToWatchlist(id) {
-      console.log("arrived3");
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isToWatch = true;
-          console.log(this.movies[i].isToWatch);
+        }
+      }
+    },
+    removeFromWatchlist(id) {
+      for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id == id) {
+          this.movies[i].isToWatch = false;
         }
       }
     },

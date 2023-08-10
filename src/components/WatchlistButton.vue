@@ -26,11 +26,6 @@ export default {
       },
     },
   },
-  // data() {
-  //   return {
-  //     isToWatch: false,
-  //   };
-  // },
   methods: {
     addWatchlist() {
       this.$emit("addToWatchlist", this.movie.id);
