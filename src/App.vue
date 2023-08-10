@@ -1,5 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <p>You have {{ moviesFavourited }} favourite movies.</p>
+  <p>You have {{ moviesToWatch }} you want to watch.</p>
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   <MovieList
     :movies="movies"
@@ -61,6 +63,7 @@ export default {
           this.movies[i].isToWatch = true;
         }
       }
+      this.moviesToWatch++;
     },
     removeFromWatchlist(id) {
       for (let i = 0; i < this.movies.length; i++) {
@@ -68,6 +71,7 @@ export default {
           this.movies[i].isToWatch = false;
         }
       }
+      this.moviesToWatch--;
     },
     addToFavourites(id) {
       for (let i = 0; i < this.movies.length; i++) {
@@ -75,6 +79,7 @@ export default {
           this.movies[i].isFavourited = true;
         }
       }
+      this.moviesFavourited++;
     },
     removeFromFavourites(id) {
       for (let i = 0; i < this.movies.length; i++) {
@@ -82,6 +87,7 @@ export default {
           this.movies[i].isFavourited = false;
         }
       }
+      this.moviesFavourited--;
     },
   },
 };
