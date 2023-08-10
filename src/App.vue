@@ -35,6 +35,18 @@ export default {
           synopsis:
             "King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles.",
         },
+        {
+          id: 2,
+          title: "Jaws",
+          year: 1975,
+          director: "Steven Spielberg",
+          poster: "https://placehold.co/250x300/55ffcc/000",
+          isFavourited: false,
+          isToWatch: false,
+          rating: [],
+          synopsis:
+            "When a killer shark unleashes chaos on a beach community off Cape Cod, it's up to a local sheriff, a marine biologist, and an old seafarer to hunt the beast down.",
+        },
       ],
     };
   },
