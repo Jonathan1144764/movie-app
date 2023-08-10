@@ -7,6 +7,8 @@
       :key="movie.id"
       @addToWatchlist="addToWatchlist"
       @removeFromWatchlist="removeFromWatchlist"
+      @addToFavourites="addToFavourites"
+      @removeFromFavourites="removeFromFavourites"
     ></MovieItem>
   </div>
 </template>
@@ -33,6 +35,12 @@ export default {
     },
     removeFromWatchlist(id) {
       this.$emit("removeFromWatchlist", id);
+    },
+    addToFavourites(id) {
+      this.$emit("addToFavourites", id);
+    },
+    removeFromFavourites(id) {
+      this.$emit("removeFromFavourites", id);
     },
   },
 };

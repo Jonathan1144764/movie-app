@@ -2,12 +2,19 @@
   <div class="movie">
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
-    <FavouritesButton :movie="movie" class="btn"></FavouritesButton>
+    <FavouritesButton
+      :movie="movie"
+      class="btn"
+      @addToFavourites="addToFavourites"
+      @removeFromFavourites="removeFromFavourites"
+    ></FavouritesButton>
     <WatchlistButton
       :movie="movie"
       class="btn"
       @addToWatchlist="addToWatchlist"
       @removeFromWatchlist="removeFromWatchlist"
+      @addToFavourites="addToFavourites"
+      @removeFromFavourites="removeFromFavourites"
     ></WatchlistButton>
   </div>
 </template>
@@ -46,6 +53,12 @@ export default {
     },
     removeFromWatchlist(id) {
       this.$emit("removeFromWatchlist", id);
+    },
+    addToFavourites(id) {
+      this.$emit("addToFavourites", id);
+    },
+    removeFromFavourites(id) {
+      this.$emit("removeFromFavourites", id);
     },
   },
 };

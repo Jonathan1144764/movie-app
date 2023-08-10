@@ -1,5 +1,5 @@
 <template>
-  <button v-if="isFavourited == false" @click="addFavourite">
+  <button v-if="movie.isFavourited == false" @click="addFavourite">
     Add to Favourites
   </button>
   <button v-else @click="removeFavourite">Remove from Favourites</button>
@@ -25,11 +25,6 @@ export default {
         };
       },
     },
-  },
-  data() {
-    return {
-      isFavourited: false,
-    };
   },
   methods: {
     addFavourite() {

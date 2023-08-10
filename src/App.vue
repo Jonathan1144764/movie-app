@@ -5,6 +5,8 @@
     :movies="movies"
     @addToWatchlist="addToWatchlist"
     @removeFromWatchlist="removeFromWatchlist"
+    @addToFavourites="addToFavourites"
+    @removeFromFavourites="removeFromFavourites"
   ></MovieList>
 </template>
 
@@ -52,6 +54,20 @@ export default {
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isToWatch = false;
+        }
+      }
+    },
+    addToFavourites(id) {
+      for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id == id) {
+          this.movies[i].isFavourited = true;
+        }
+      }
+    },
+    removeFromFavourites(id) {
+      for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id == id) {
+          this.movies[i].isFavourited = false;
         }
       }
     },
