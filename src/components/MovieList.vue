@@ -5,6 +5,7 @@
       v-for="movie in movies"
       :movie="movie"
       :key="movie.id"
+      @addToWatchlist="addToWatchlist"
     ></MovieItem>
   </div>
 </template>
@@ -24,6 +25,12 @@ export default {
   },
   components: {
     MovieItem,
+  },
+  methods: {
+    addToWatchlist(id) {
+      this.$emit("addToWatchlist", id);
+      console.log("arrived2");
+    },
   },
 };
 </script>

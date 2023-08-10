@@ -3,7 +3,11 @@
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
     <FavouritesButton :movie="movie" class="btn"></FavouritesButton>
-    <WatchlistButton :movie="movie" class="btn"></WatchlistButton>
+    <WatchlistButton
+      :movie="movie"
+      class="btn"
+      @addToWatchlist="addToWatchlist"
+    ></WatchlistButton>
   </div>
 </template>
 
@@ -34,6 +38,12 @@ export default {
   components: {
     FavouritesButton,
     WatchlistButton,
+  },
+  methods: {
+    addToWatchlist(id) {
+      this.$emit("addToWatchlist", id);
+      console.log("arrived");
+    },
   },
 };
 </script>

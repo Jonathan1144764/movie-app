@@ -18,6 +18,8 @@ export default {
           year: 1900,
           director: "D Fault",
           poster: "https://placehold.co/200x300/55ffcc/000",
+          isFavourited: false,
+          isToWatch: false,
           rating: [],
           synopsis: "A default movie synopsis.",
         };
@@ -32,11 +34,9 @@ export default {
   methods: {
     addFavourite() {
       this.$emit("addToFavourites", this.movie.id);
-      this.isFavourited = true;
     },
     removeFavourite() {
       this.$emit("removeFromFavourites", this.movie.id);
-      this.isFavourited = false;
     },
   },
 };

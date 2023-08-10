@@ -1,7 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-  <MovieList :movies="movies"></MovieList>
+  <MovieList :movies="movies" @addToWatchlist="addToWatchlist"></MovieList>
 </template>
 
 <script>
@@ -23,6 +23,8 @@ export default {
           year: 1975,
           director: "Terry Gilliam",
           poster: "https://placehold.co/250x300/55ffcc/000",
+          isFavourited: false,
+          isToWatch: false,
           rating: [],
           synopsis:
             "King Arthur and his Knights of the Round Table embark on a surreal, low-budget search for the Holy Grail, encountering many, very silly obstacles.",
@@ -33,6 +35,17 @@ export default {
   components: {
     // HelloWorld,
     MovieList,
+  },
+  methods: {
+    addToWatchlist(id) {
+      console.log("arrived3");
+      for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id == id) {
+          this.movies[i].isToWatch = true;
+          console.log(this.movies[i].isToWatch);
+        }
+      }
+    },
   },
 };
 </script>
