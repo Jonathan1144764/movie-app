@@ -13,8 +13,6 @@
       class="btn"
       @addToWatchlist="addToWatchlist"
       @removeFromWatchlist="removeFromWatchlist"
-      @addToFavourites="addToFavourites"
-      @removeFromFavourites="removeFromFavourites"
     ></WatchlistButton>
   </div>
 </template>
