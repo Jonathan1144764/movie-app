@@ -1,5 +1,5 @@
 <template>
-  <button v-if="isToWatch == false" @click="addWatchlist">
+  <button v-if="movie.isToWatch == false" @click="addWatchlist">
     Add to Watchlist
   </button>
   <button v-else @click="removeWatchlist">Remove from Watchlist</button>
@@ -11,7 +11,7 @@ export default {
   props: {
     movie: {
       type: Object,
-      defult() {
+      default() {
         return {
           id: 0,
           title: "Default",
