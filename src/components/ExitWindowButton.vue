@@ -7,7 +7,7 @@ export default {
   name: "ExitWindowButton",
   methods: {
     hideWindow() {
-      this.$emit("hideWindow");
+      this.$emit("hideWindow", true);
     },
   },
 };

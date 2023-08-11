@@ -5,6 +5,6 @@ describe("MovieDetailsButtons", () => {
   it("emits event to show movie details component when clicked", async () => {
     const wrapper = shallowMount(MovieDetailsButton);
     await wrapper.find("button").trigger("click");
-    expect(wrapper.emitted().showDetails[0][0]).toBe(0);
+    expect(wrapper.emitted().showDetails[0][0]).toBe(true);
   });
 });

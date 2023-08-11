@@ -7,7 +7,7 @@ export default {
   name: "MovieDetailsButton",
   methods: {
     showDetails() {
-      this.$emit("showDetails");
+      this.$emit("showDetails", true);
     },
   },
 };
