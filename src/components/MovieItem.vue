@@ -16,10 +16,7 @@
         @removeFromWatchlist="removeFromWatchlist"
       ></WatchlistButton>
     </div>
-    <MovieDetailsButton
-      :movie="movie"
-      @showDetails="showDetails"
-    ></MovieDetailsButton>
+    <MovieDetailsButton @showDetails="showDetails"></MovieDetailsButton>
     <div :class="{ detailsShown: isShown }" class="details-wrapper">
       <MovieDetails :movie="movie"></MovieDetails>
     </div>
