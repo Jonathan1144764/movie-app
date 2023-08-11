@@ -1,21 +1,12 @@
 <template>
-  <div
-    class="details-wrapper"
-    @showDetails="showDetails"
-    :class="{ detailsShown }"
-  >
-    <MovieDetailsButton :movie="movie"></MovieDetailsButton>
-    <div class="details">
-      <h3>{{ movie.title }}</h3>
-      <p>{{ movie.year }} - {{ movie.director }}</p>
-      <p>{{ movie.synopsis }}</p>
-    </div>
+  <div class="details">
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.year }} - {{ movie.director }}</p>
+    <p>{{ movie.synopsis }}</p>
   </div>
 </template>
 
 <script>
-import MovieDetailsButton from "./MovieDetailsButton.vue";
-
 export default {
   name: "MovieDetails",
   props: {
@@ -36,28 +27,7 @@ export default {
       },
     },
   },
-  data() {
-    return {
-      detailsShown: false,
-    };
-  },
-  components: {
-    MovieDetailsButton,
-  },
-  methods: {
-    showDetails(id) {
-      this.detailsShown = true;
-      console.log(id);
-    },
-  },
 };
 </script>
 
-<style scoped lang="scss">
-// .details-wrapper {
-//   display: none;
-// }
-.detailsShown {
-  display: block;
-}
-</style>
+<style scoped lang="scss"></style>

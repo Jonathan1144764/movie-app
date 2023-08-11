@@ -16,8 +16,13 @@
         @removeFromWatchlist="removeFromWatchlist"
       ></WatchlistButton>
     </div>
-    <MovieDetailsButton :movie="movie"></MovieDetailsButton>
-    <MovieDetails :movie="movie"></MovieDetails>
+    <MovieDetailsButton
+      :movie="movie"
+      @showDetails="showDetails"
+    ></MovieDetailsButton>
+    <div :class="{ detailsShown: isShown }" class="details-wrapper">
+      <MovieDetails :movie="movie"></MovieDetails>
+    </div>
   </div>
 </template>
 
@@ -53,6 +58,11 @@ export default {
     MovieDetailsButton,
     MovieDetails,
   },
+  data() {
+    return {
+      isShown: false,
+    };
+  },
   methods: {
     addToWatchlist(id) {
       this.$emit("addToWatchlist", id);
@@ -65,6 +75,10 @@ export default {
     },
     removeFromFavourites(id) {
       this.$emit("removeFromFavourites", id);
+    },
+    showDetails() {
+      this.isShown = true;
+      console.log("received");
     },
   },
 };
@@ -81,5 +95,12 @@ img {
 
 .movie {
   position: relative;
+}
+
+.details-wrapper {
+  display: none;
+}
+.detailsShown {
+  display: block;
 }
 </style>
