@@ -10,11 +10,15 @@
     @addToFavourites="addToFavourites"
     @removeFromFavourites="removeFromFavourites"
   ></MovieList>
+  <MovieFavouriteList
+    :moviesFavouritedList="moviesFavouritedList"
+  ></MovieFavouriteList>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import MovieList from "./components/MovieList.vue";
+import MovieFavouriteList from "./components/MovieFavouriteList.vue";
 
 export default {
   name: "App",
@@ -55,6 +59,7 @@ export default {
   components: {
     // HelloWorld,
     MovieList,
+    MovieFavouriteList,
   },
   methods: {
     addToWatchlist(id) {
@@ -77,14 +82,23 @@ export default {
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isFavourited = true;
+          this.moviesFavouritedList.push(this.movies[i]);
         }
       }
+      console.log(this.moviesFavouritedList);
       this.moviesFavourited++;
     },
     removeFromFavourites(id) {
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isFavourited = false;
+        }
+      }
+      for (let i = 0; i < this.moviesFavouritedList.length; i++) {
+        if (this.moviesFavouritedList[i].id != id) {
+          let newFaveList = [];
+          newFaveList.push(this.moviesFavouritedList[i]);
+          this.moviesFavouritedList = newFaveList;
         }
       }
       this.moviesFavourited--;
