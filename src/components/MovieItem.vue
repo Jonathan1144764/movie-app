@@ -17,6 +17,7 @@
       ></WatchlistButton>
     </div>
     <MovieDetailsButton :movie="movie"></MovieDetailsButton>
+    <MovieDetails :movie="movie"></MovieDetails>
   </div>
 </template>
 
@@ -24,6 +25,7 @@
 import FavouritesButton from "./FavouritesButton.vue";
 import WatchlistButton from "./WatchlistButton.vue";
 import MovieDetailsButton from "./MovieDetailsButton.vue";
+import MovieDetails from "./MovieDetails.vue";
 
 export default {
   name: "MovieItem",
@@ -49,6 +51,7 @@ export default {
     FavouritesButton,
     WatchlistButton,
     MovieDetailsButton,
+    MovieDetails,
   },
   methods: {
     addToWatchlist(id) {
