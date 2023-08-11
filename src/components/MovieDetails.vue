@@ -1,4 +1,5 @@
 <template>
+  <ExitWindowButton @hide-window="hideWindow"></ExitWindowButton>
   <div class="details">
     <h3>{{ movie.title }}</h3>
     <p>{{ movie.year }} - {{ movie.director }}</p>
@@ -7,6 +8,8 @@
 </template>
 
 <script>
+import ExitWindowButton from "./ExitWindowButton.vue";
+
 export default {
   name: "MovieDetails",
   props: {
@@ -25,6 +28,12 @@ export default {
           synopsis: "A default movie synopsis.",
         };
       },
+    },
+  },
+  components: { ExitWindowButton },
+  methods: {
+    hideWindow() {
+      this.$emit("hideWindow", true);
     },
   },
 };
