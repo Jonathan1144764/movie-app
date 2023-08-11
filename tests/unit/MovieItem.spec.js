@@ -44,6 +44,12 @@ describe("MovieItem.vue", () => {
     await wrapper.vm.showDetails();
     expect(wrapper.vm.isShown).toBe(true);
   });
+  it("listens for an event that changes the boolean state of isShown to false when true", async () => {
+    const wrapper = shallowMount(MovieItem);
+    await wrapper.setData({ isShown: true });
+    await wrapper.vm.hideDetails();
+    expect(wrapper.vm.isShown).toBe(false);
+  });
   it("changes the class of MovieDetails wrapper when isShown is true", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.setData({ isShown: true });

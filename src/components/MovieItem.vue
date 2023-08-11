@@ -18,7 +18,7 @@
     </div>
     <MovieDetailsButton @showDetails="showDetails"></MovieDetailsButton>
     <div :class="{ detailsShown: isShown }" class="details-wrapper">
-      <MovieDetails :movie="movie"></MovieDetails>
+      <MovieDetails :movie="movie" @hide-window="hideDetails"></MovieDetails>
     </div>
   </div>
 </template>
@@ -75,6 +75,9 @@ export default {
     },
     showDetails() {
       this.isShown = true;
+    },
+    hideDetails() {
+      this.isShown = false;
     },
   },
 };
