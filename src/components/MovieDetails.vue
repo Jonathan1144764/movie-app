@@ -1,5 +1,9 @@
 <template>
-  <div class="details-wrapper">
+  <div
+    class="details-wrapper"
+    @showDetails="showDetails"
+    :class="{ detailsShown }"
+  >
     <MovieDetailsButton :movie="movie"></MovieDetailsButton>
     <div class="details">
       <h3>{{ movie.title }}</h3>
@@ -32,10 +36,28 @@ export default {
       },
     },
   },
+  data() {
+    return {
+      detailsShown: false,
+    };
+  },
   components: {
     MovieDetailsButton,
+  },
+  methods: {
+    showDetails(id) {
+      this.detailsShown = true;
+      console.log(id);
+    },
   },
 };
 </script>
 
-<style scope lang="scss"></style>
+<style scoped lang="scss">
+// .details-wrapper {
+//   display: none;
+// }
+.detailsShown {
+  display: block;
+}
+</style>

@@ -33,6 +33,7 @@ export default {
     showDetails() {
       this.$emit("showDetails", this.movie.id);
       this.isShown = true;
+      console.log("emitted");
     },
     hideDetails() {
       this.$emit("hideDetails", this.movie.id);
