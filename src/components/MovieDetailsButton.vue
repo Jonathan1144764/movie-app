@@ -1,6 +1,6 @@
 <template>
-  <button v-if="this.isShown == false">See details</button>
-  <button v-else>X</button>
+  <button v-if="this.isShown == false" @click="showDetails">See details</button>
+  <button v-else @click="hideDetails">X</button>
 </template>
 
 <script>
@@ -32,7 +32,11 @@ export default {
   methods: {
     showDetails() {
       this.$emit("showDetails", this.movie.id);
-      console.log(this.movie.id);
+      this.isShown = true;
+    },
+    hideDetails() {
+      this.$emit("hideDetails", this.movie.id);
+      this.isShown = false;
     },
   },
 };

@@ -2,24 +2,28 @@
   <div class="movie">
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
-    <FavouritesButton
-      :movie="movie"
-      class="btn"
-      @addToFavourites="addToFavourites"
-      @removeFromFavourites="removeFromFavourites"
-    ></FavouritesButton>
-    <WatchlistButton
-      :movie="movie"
-      class="btn"
-      @addToWatchlist="addToWatchlist"
-      @removeFromWatchlist="removeFromWatchlist"
-    ></WatchlistButton>
+    <div class="list-buttons">
+      <FavouritesButton
+        :movie="movie"
+        class="btn"
+        @addToFavourites="addToFavourites"
+        @removeFromFavourites="removeFromFavourites"
+      ></FavouritesButton>
+      <WatchlistButton
+        :movie="movie"
+        class="btn"
+        @addToWatchlist="addToWatchlist"
+        @removeFromWatchlist="removeFromWatchlist"
+      ></WatchlistButton>
+    </div>
+    <MovieDetailsButton :movie="movie"></MovieDetailsButton>
   </div>
 </template>
 
 <script>
 import FavouritesButton from "./FavouritesButton.vue";
 import WatchlistButton from "./WatchlistButton.vue";
+import MovieDetailsButton from "./MovieDetailsButton.vue";
 
 export default {
   name: "MovieItem",
@@ -44,6 +48,7 @@ export default {
   components: {
     FavouritesButton,
     WatchlistButton,
+    MovieDetailsButton,
   },
   methods: {
     addToWatchlist(id) {
