@@ -44,6 +44,13 @@ describe("MovieItem.vue", () => {
     await wrapper.vm.showDetails();
     expect(wrapper.vm.isShown).toBe(true);
   });
+  it("changes the class of MovieDetails wrapper when isShown is true", async () => {
+    const wrapper = shallowMount(MovieItem);
+    await wrapper.setData({ isShown: true });
+    expect(wrapper.find(".details-wrapper").classes()).toContain(
+      "detailsShown"
+    );
+  });
   it("listens for an event to add movie rating and emits an event in turn", () => {});
   it("emits an event to display movie details when the see details button is clicked", () => {});
 });
