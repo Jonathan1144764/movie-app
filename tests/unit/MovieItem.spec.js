@@ -39,6 +39,11 @@ describe("MovieItem.vue", () => {
     await wrapper.vm.removeFromWatchlist(1);
     expect(wrapper.emitted().removeFromWatchlist[0][0]).toBe(1);
   });
+  it("listens for an event that changes the boolean state of isShown to true when false", async () => {
+    const wrapper = shallowMount(MovieItem);
+    await wrapper.vm.showDetails();
+    expect(wrapper.vm.isShown).toBe(true);
+  });
   it("listens for an event to add movie rating and emits an event in turn", () => {});
   it("emits an event to display movie details when the see details button is clicked", () => {});
 });

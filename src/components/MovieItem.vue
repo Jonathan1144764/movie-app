@@ -78,7 +78,6 @@ export default {
     },
     showDetails() {
       this.isShown = true;
-      console.log("received");
     },
   },
 };
