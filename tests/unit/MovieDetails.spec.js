@@ -19,6 +19,4 @@ describe("MovieDetails.vue", () => {
     });
     expect(wrapper.find("h3").text()).toBe("Default");
   });
-  it("listens for an event to display movie details", () => {});
-  it("hides movie detials when the close button is clicked", () => {});
 });
