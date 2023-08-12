@@ -1,7 +1,20 @@
-// import { shallowMount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
+import MovieFavouriteList from "@/components/MovieFavouriteList.vue";
 
-// describe("MovieFavouriteList.vue", () => {
-//   it("listens for an event to remove from favourites and emits an event in turn", () => {});
-//   it("listens for an event to add to watchlist and emits an event in turn", () => {});
-//   it("listens for an event to remove from watchlist and emits an event in turn", () => {});
-// });
+describe("MovieFavouriteList.vue", () => {
+  it("listens for an event to remove from favourites and emits an event in turn", async () => {
+    const wrapper = shallowMount(MovieFavouriteList);
+    await wrapper.vm.removeFromFavourites(1);
+    expect(wrapper.emitted().removeFromFavourites[0][0]).toBe(1);
+  });
+  it("listens for an event to add to watchlist and emits an event in turn", async () => {
+    const wrapper = shallowMount(MovieFavouriteList);
+    await wrapper.vm.addToWatchlist(1);
+    expect(wrapper.emitted().addToWatchlist[0][0]).toBe(1);
+  });
+  it("listens for an event to remove from watchlist and emits an event in turn", async () => {
+    const wrapper = shallowMount(MovieFavouriteList);
+    await wrapper.vm.removeFromWatchlist(1);
+    expect(wrapper.emitted().removeFromWatchlist[0][0]).toBe(1);
+  });
+});

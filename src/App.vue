@@ -2,7 +2,6 @@
   <img alt="Vue logo" src="./assets/logo.png" />
   <p>You have {{ moviesFavourited }} favourite movies.</p>
   <p>You have {{ moviesToWatch }} you want to watch.</p>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   <MovieList
     :movies="movies"
     @addToWatchlist="addToWatchlist"
@@ -19,7 +18,6 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
 import MovieList from "./components/MovieList.vue";
 import MovieFavouriteList from "./components/MovieFavouriteList.vue";
 
@@ -60,7 +58,6 @@ export default {
     };
   },
   components: {
-    // HelloWorld,
     MovieList,
     MovieFavouriteList,
   },
