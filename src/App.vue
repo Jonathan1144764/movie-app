@@ -15,11 +15,18 @@
     @removeFromWatchlist="removeFromWatchlist"
     @removeFromFavourites="removeFromFavourites"
   ></MovieFavouriteList>
+  <MovieWatchlist
+    :moviesToWatchList="moviesToWatchList"
+    @removeFromWatchlist="removeFromWatchlist"
+    @addToFavourites="addToFavourites"
+    @removeFromFavourites="removeFromFavourites"
+  ></MovieWatchlist>
 </template>
 
 <script>
 import MovieList from "./components/MovieList.vue";
 import MovieFavouriteList from "./components/MovieFavouriteList.vue";
+import MovieWatchlist from "./components/MovieWatchlist.vue";
 
 export default {
   name: "App",
@@ -60,6 +67,7 @@ export default {
   components: {
     MovieList,
     MovieFavouriteList,
+    MovieWatchlist,
   },
   methods: {
     addToWatchlist(id) {
