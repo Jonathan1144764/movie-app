@@ -85,7 +85,6 @@ export default {
           this.moviesFavouritedList.push(this.movies[i]);
         }
       }
-      console.log(this.moviesFavouritedList);
       this.moviesFavourited++;
     },
     removeFromFavourites(id) {
@@ -95,12 +94,8 @@ export default {
         }
       }
       for (let i = 0; i < this.moviesFavouritedList.length; i++) {
-        if (this.moviesFavouritedList[i].id != id) {
-          let newFaveList = [];
-          newFaveList.push(this.moviesFavouritedList[i]);
-          this.moviesFavouritedList = newFaveList;
-        } else {
-          this.moviesFavouritedList = [];
+        if (this.moviesFavouritedList[i].id == id) {
+          this.moviesFavouritedList.splice(i, 1);
         }
       }
       this.moviesFavourited--;
