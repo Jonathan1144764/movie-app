@@ -12,6 +12,9 @@
   ></MovieList>
   <MovieFavouriteList
     :moviesFavouritedList="moviesFavouritedList"
+    @addToWatchlist="addToWatchlist"
+    @removeFromWatchlist="removeFromWatchlist"
+    @removeFromFavourites="removeFromFavourites"
   ></MovieFavouriteList>
 </template>
 
@@ -99,6 +102,8 @@ export default {
           let newFaveList = [];
           newFaveList.push(this.moviesFavouritedList[i]);
           this.moviesFavouritedList = newFaveList;
+        } else {
+          this.moviesFavouritedList = [];
         }
       }
       this.moviesFavourited--;

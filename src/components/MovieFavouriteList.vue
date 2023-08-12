@@ -5,6 +5,9 @@
       v-for="movie in moviesFavouritedList"
       :movie="movie"
       :key="movie.id"
+      @removeFromFavourites="removeFromFavourites"
+      @addToWatchlist="addToWatchlist"
+      @removeFromWatchlist="removeFromWatchlist"
     ></MovieItem>
   </div>
 </template>
@@ -24,6 +27,17 @@ export default {
   },
   components: {
     MovieItem,
+  },
+  methods: {
+    addToWatchlist(id) {
+      this.$emit("addToWatchlist", id);
+    },
+    removeFromWatchlist(id) {
+      this.$emit("removeFromWatchlist", id);
+    },
+    removeFromFavourites(id) {
+      this.$emit("removeFromFavourites", id);
+    },
   },
 };
 </script>
