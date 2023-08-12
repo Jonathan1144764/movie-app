@@ -7,7 +7,7 @@
       :key="movie.id"
       @removeFromWatchlist="removeFromWatchlist"
       @addToFavourites="addToFavourites"
-        @removeFromFavourites="removeFromFavourites"
+      @removeFromFavourites="removeFromFavourites"
     ></MovieItem>
   </div>
 </template>
@@ -17,7 +17,7 @@ import MovieItem from "./MovieItem.vue";
 
 export default {
   name: "MovieWatchlist",
-  prop: {
+  props: {
     moviesToWatchList: {
       type: Array,
       default() {
@@ -31,13 +31,13 @@ export default {
   methods: {
     removeFromWatchlist(id) {
       this.$emit("removeFromWatchlist", id);
-      },
-      addToFavourites(id) {
-          this.$emit("addToFavourites", id);
-      },
+    },
+    addToFavourites(id) {
+      this.$emit("addToFavourites", id);
+    },
     removeFromFavourites(id) {
-        this.$emit("removeFromFavourites", id);
-    }
+      this.$emit("removeFromFavourites", id);
+    },
   },
 };
 </script>

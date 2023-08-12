@@ -74,6 +74,7 @@ export default {
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isToWatch = true;
+          this.moviesToWatchList.push(this.movies[i]);
         }
       }
       this.moviesToWatch++;
@@ -82,6 +83,11 @@ export default {
       for (let i = 0; i < this.movies.length; i++) {
         if (this.movies[i].id == id) {
           this.movies[i].isToWatch = false;
+        }
+      }
+      for (let i = 0; i < this.moviesToWatchList.length; i++) {
+        if (this.moviesToWatchList[i].id == id) {
+          this.moviesToWatchList.splice(i, 1);
         }
       }
       this.moviesToWatch--;
