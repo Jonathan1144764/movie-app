@@ -15,12 +15,14 @@
     @addToWatchlist="addToWatchlist"
     @removeFromWatchlist="removeFromWatchlist"
     @removeFromFavourites="removeFromFavourites"
+    @addRating="addRating"
   ></MovieFavouriteList>
   <MovieWatchlist
     :moviesToWatchList="moviesToWatchList"
     @removeFromWatchlist="removeFromWatchlist"
     @addToFavourites="addToFavourites"
     @removeFromFavourites="removeFromFavourites"
+    @addRating="addRating"
   ></MovieWatchlist>
 </template>
 
