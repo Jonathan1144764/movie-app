@@ -9,6 +9,7 @@
       @removeFromWatchlist="removeFromWatchlist"
       @addToFavourites="addToFavourites"
       @removeFromFavourites="removeFromFavourites"
+      @addRating="addRating"
     ></MovieItem>
   </div>
 </template>
@@ -41,6 +42,9 @@ export default {
     },
     removeFromFavourites(id) {
       this.$emit("removeFromFavourites", id);
+    },
+    addRating(id, rating) {
+      this.$emit("addRating", id, rating);
     },
   },
 };

@@ -8,6 +8,7 @@
     @removeFromWatchlist="removeFromWatchlist"
     @addToFavourites="addToFavourites"
     @removeFromFavourites="removeFromFavourites"
+    @addRating="addRating"
   ></MovieList>
   <MovieFavouriteList
     :moviesFavouritedList="moviesFavouritedList"
@@ -113,6 +114,14 @@ export default {
         }
       }
       this.moviesFavourited--;
+    },
+    addRating(id, rating) {
+      for (let i = 0; i < this.movies.length; i++) {
+        if (this.movies[i].id == id) {
+          this.movies[i].rating.push(rating);
+        }
+        console.log(this.movies[i]);
+      }
     },
   },
 };

@@ -2,7 +2,7 @@
   <div class="movie">
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
-    <MovieRating></MovieRating>
+    <MovieRating :movie="movie" @addRating="addRating"></MovieRating>
     <div class="list-buttons">
       <FavouritesButton
         :movie="movie"
@@ -81,6 +81,9 @@ export default {
     },
     hideDetails() {
       this.isShown = false;
+    },
+    addRating(id, rating) {
+      this.$emit("addRating", id, rating);
     },
   },
 };
