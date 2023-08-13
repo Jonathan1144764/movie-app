@@ -24,4 +24,38 @@ describe("MovieDetails.vue", () => {
     await wrapper.vm.hideWindow();
     expect(wrapper.emitted().hideWindow[0][0]).toBe(true);
   });
+  it("computes the mean average rating of movie ratings if there are ratings", () => {
+    const movie = {
+      id: 0,
+      title: "Default",
+      year: 1900,
+      director: "D Fault",
+      poster: "https://placehold.co/200x300/55ffcc/000",
+      isFavourited: false,
+      isToWatch: false,
+      rating: [10, 20],
+      synopsis: "A default movie synopsis.",
+    };
+    const wrapper = shallowMount(MovieDetails, {
+      props: { movie },
+    });
+    expect(wrapper.vm.ratingAverage).toBe(15);
+  });
+  it("returns no ratings when there are no movie ratings to compute", () => {
+    const movie = {
+      id: 0,
+      title: "Default",
+      year: 1900,
+      director: "D Fault",
+      poster: "https://placehold.co/200x300/55ffcc/000",
+      isFavourited: false,
+      isToWatch: false,
+      rating: [],
+      synopsis: "A default movie synopsis.",
+    };
+    const wrapper = shallowMount(MovieDetails, {
+      props: { movie },
+    });
+    expect(wrapper.vm.ratingAverage).toBe("No ratings");
+  });
 });

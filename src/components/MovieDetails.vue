@@ -3,6 +3,7 @@
   <div class="details">
     <h3>{{ movie.title }}</h3>
     <p>{{ movie.year }} - {{ movie.director }}</p>
+    <p>Rating: {{ ratingAverage }}</p>
     <p>{{ movie.synopsis }}</p>
   </div>
 </template>
@@ -34,6 +35,20 @@ export default {
   methods: {
     hideWindow() {
       this.$emit("hideWindow", true);
+    },
+  },
+  computed: {
+    ratingAverage() {
+      if (this.movie.rating.length >= 1) {
+        let sum = 0;
+        for (let i = 0; i < this.movie.rating.length; i++) {
+          sum += this.movie.rating[i];
+        }
+        let avg = sum / this.movie.rating.length;
+        return Math.round(avg * 10) / 10;
+      } else {
+        return "No ratings";
+      }
     },
   },
 };
