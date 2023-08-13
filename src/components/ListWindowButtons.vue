@@ -1,10 +1,10 @@
 <template>
   <div class="window-buttons">
     <button @click="showFavourites">
-      {{ moviesFavourited }} favourite movies.
+      {{ moviesFavourited }} favourite movies
     </button>
     <button @click="showToWatch">
-      {{ moviesToWatch }} movies you want to watch.
+      {{ moviesToWatch }} movies you want to watch
     </button>
   </div>
 </template>
