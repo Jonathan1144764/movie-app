@@ -1,16 +1,20 @@
 <template>
-  <h2>Favourite Movies</h2>
-  <div class="favourite-movie-list">
-    <MovieItem
-      v-for="movie in moviesFavouritedList"
-      :movie="movie"
-      :key="movie.id"
-      @removeFromFavourites="removeFromFavourites"
-      @addToWatchlist="addToWatchlist"
-      @removeFromWatchlist="removeFromWatchlist"
-      @addRating="addRating"
-    ></MovieItem>
-  </div>
+  <section class="favourite-movies-list">
+    <div class="container">
+      <h2>Favourite Movies</h2>
+      <div class="favourite-movie-list">
+        <MovieItem
+          v-for="movie in moviesFavouritedList"
+          :movie="movie"
+          :key="movie.id"
+          @removeFromFavourites="removeFromFavourites"
+          @addToWatchlist="addToWatchlist"
+          @removeFromWatchlist="removeFromWatchlist"
+          @addRating="addRating"
+        ></MovieItem>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>

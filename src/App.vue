@@ -1,6 +1,14 @@
 <template>
-  <p>You have {{ moviesFavourited }} favourite movies.</p>
-  <p>You have {{ moviesToWatch }} you want to watch.</p>
+  <header>
+    <div class="container">
+      <div class="header-flex">
+        <h1>Numberboxd</h1>
+        <p>You have {{ moviesFavourited }} favourite movies.</p>
+        <p>You have {{ moviesToWatch }} you want to watch.</p>
+      </div>
+    </div>
+  </header>
+
   <MovieList
     :movies="movies"
     @addToWatchlist="addToWatchlist"
@@ -139,6 +147,23 @@ export default {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+}
+
+.header-flex {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-list-all {
+  background: radial-gradient(#5495ce, #0c0d60);
+}
+
+.movie-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
 }
 
 // #app {
