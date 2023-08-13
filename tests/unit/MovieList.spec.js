@@ -22,4 +22,9 @@ describe("MovieList.vue", () => {
     await wrapper.vm.removeFromFavourites(1);
     expect(wrapper.emitted().removeFromFavourites[0][0]).toBe(1);
   });
+  it("listens for an event to add movie rating and emits an event in turn", async () => {
+    const wrapper = shallowMount(MovieList);
+    await wrapper.vm.addRating(1, 2);
+    expect(wrapper.emitted().addRating[0][1]).toBe(2);
+  });
 });
