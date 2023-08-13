@@ -2,6 +2,7 @@
   <div class="movie">
     <img :src="movie.poster" alt="" />
     <h3>{{ movie.title }}</h3>
+    <MovieRating></MovieRating>
     <div class="list-buttons">
       <FavouritesButton
         :movie="movie"
@@ -28,6 +29,7 @@ import FavouritesButton from "./FavouritesButton.vue";
 import WatchlistButton from "./WatchlistButton.vue";
 import MovieDetailsButton from "./MovieDetailsButton.vue";
 import MovieDetails from "./MovieDetails.vue";
+import MovieRating from "./MovieRating.vue";
 
 export default {
   name: "MovieItem",
@@ -54,6 +56,7 @@ export default {
     WatchlistButton,
     MovieDetailsButton,
     MovieDetails,
+    MovieRating,
   },
   data() {
     return {
