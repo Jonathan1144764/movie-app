@@ -1,5 +1,4 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <p>You have {{ moviesFavourited }} favourite movies.</p>
   <p>You have {{ moviesToWatch }} you want to watch.</p>
   <MovieList
@@ -130,12 +129,24 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+// #app {
+//   font-family: Avenir, Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   text-align: center;
+//   color: #2c3e50;
+//   margin-top: 60px;
+// }
 </style>
