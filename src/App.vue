@@ -3,8 +3,14 @@
     <div class="container">
       <div class="header-flex">
         <h1>Numberboxd</h1>
-        <p>You have {{ moviesFavourited }} favourite movies.</p>
-        <p>You have {{ moviesToWatch }} you want to watch.</p>
+        <ListWindowButtons
+          :moviesFavourited="moviesFavourited"
+          :moviesToWatch="moviesToWatch"
+          @showFavourites="showFavourites"
+          @showToWatch="showToWatch"
+        ></ListWindowButtons>
+        <!-- <p>You have {{ moviesFavourited }} favourite movies.</p>
+        <p>You have {{ moviesToWatch }} you want to watch.</p> -->
       </div>
     </div>
   </header>
@@ -19,6 +25,7 @@
   ></MovieList>
   <MovieFavouriteList
     :moviesFavouritedList="moviesFavouritedList"
+    :favouritesShown="favouritesShown"
     @addToWatchlist="addToWatchlist"
     @removeFromWatchlist="removeFromWatchlist"
     @removeFromFavourites="removeFromFavourites"
@@ -26,6 +33,7 @@
   ></MovieFavouriteList>
   <MovieWatchlist
     :moviesToWatchList="moviesToWatchList"
+    :toWatchShown="toWatchShown"
     @removeFromWatchlist="removeFromWatchlist"
     @addToFavourites="addToFavourites"
     @removeFromFavourites="removeFromFavourites"
@@ -37,6 +45,7 @@
 import MovieList from "./components/MovieList.vue";
 import MovieFavouriteList from "./components/MovieFavouriteList.vue";
 import MovieWatchlist from "./components/MovieWatchlist.vue";
+import ListWindowButtons from "./components/ListWindowButtons.vue";
 
 export default {
   name: "App",
@@ -46,6 +55,8 @@ export default {
       moviesFavouritedList: [],
       moviesToWatch: 0,
       moviesToWatchList: [],
+      favouritesShown: false,
+      toWatchShown: false,
       movies: [
         {
           id: 1,
@@ -78,6 +89,7 @@ export default {
     MovieList,
     MovieFavouriteList,
     MovieWatchlist,
+    ListWindowButtons,
   },
   methods: {
     addToWatchlist(id) {
@@ -132,6 +144,12 @@ export default {
         console.log(this.movies[i]);
       }
     },
+    showFavourites() {
+      this.favouritesShown = true;
+    },
+    showToWatch() {
+      this.toWatchShown = true;
+    },
   },
 };
 </script>
@@ -141,6 +159,19 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+}
+
+section {
+  padding: 40px 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .container {
@@ -156,14 +187,32 @@ export default {
   align-items: center;
 }
 
+.window-buttons {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  button {
+    background: none;
+    border: none;
+    color: #fff;
+  }
+}
+
 .movie-list-all {
-  background: radial-gradient(#5495ce, #0c0d60);
+  background: radial-gradient(#376186, #180e46);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
 }
 
 .movie-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
 // #app {

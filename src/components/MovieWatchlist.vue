@@ -1,8 +1,8 @@
 <template>
-  <section class="movies-to-watch-list">
+  <section class="movies-to-watch-list" :class="{ toWatchShown: toWatchShown }">
     <div class="container">
       <h2>Movies You Want to Watch</h2>
-      <div class="to-watch-movie-list">
+      <div class="movie-list-grid">
         <MovieItem
           v-for="movie in moviesToWatchList"
           :movie="movie"
@@ -29,6 +29,12 @@ export default {
         return [];
       },
     },
+    toWatchShown: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
   },
   components: {
     MovieItem,
@@ -50,4 +56,12 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.movies-to-watch-list {
+  display: none;
+}
+
+.toWatchShown {
+  display: block;
+}
+</style>

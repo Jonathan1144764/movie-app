@@ -98,10 +98,6 @@ img {
   margin: 0 1rem;
 }
 
-.movie {
-  position: relative;
-}
-
 .details-wrapper {
   display: none;
 }

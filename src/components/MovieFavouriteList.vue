@@ -1,8 +1,11 @@
 <template>
-  <section class="favourite-movies-list">
+  <section
+    class="favourite-movies-list"
+    :class="{ favouritesShown: favouritesShown }"
+  >
     <div class="container">
       <h2>Favourite Movies</h2>
-      <div class="favourite-movie-list">
+      <div class="movie-list-grid">
         <MovieItem
           v-for="movie in moviesFavouritedList"
           :movie="movie"
@@ -29,6 +32,12 @@ export default {
         return [];
       },
     },
+    favouritesShown: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
   },
   components: {
     MovieItem,
@@ -50,4 +59,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.favourite-movies-list {
+  display: none;
+}
+.favouritesShown {
+  display: block;
+}
+</style>
