@@ -57,5 +57,9 @@ describe("MovieItem.vue", () => {
       "detailsShown"
     );
   });
-  it("listens for an event to add movie rating and emits an event in turn", () => {});
+  it("listens for an event to add movie rating and emits an event in turn", async () => {
+    const wrapper = shallowMount(MovieItem);
+    await wrapper.vm.addRating(1, 2);
+    expect(wrapper.emitted().addRating[0][1]).toBe(2);
+  });
 });
