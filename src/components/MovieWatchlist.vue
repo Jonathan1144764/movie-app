@@ -1,6 +1,7 @@
 <template>
   <section class="movies-to-watch-list" :class="{ toWatchShown: toWatchShown }">
     <div class="container">
+      <ExitWindowButton @hide-window="hideWindow"></ExitWindowButton>
       <h2>Movies You Want to Watch</h2>
       <div class="movie-list-grid">
         <MovieItem
@@ -19,6 +20,7 @@
 
 <script>
 import MovieItem from "./MovieItem.vue";
+import ExitWindowButton from "./ExitWindowButton.vue";
 
 export default {
   name: "MovieWatchlist",
@@ -38,6 +40,7 @@ export default {
   },
   components: {
     MovieItem,
+    ExitWindowButton,
   },
   methods: {
     removeFromWatchlist(id) {
@@ -51,6 +54,9 @@ export default {
     },
     addRating(id, rating) {
       this.$emit("addRating", id, rating);
+    },
+    hideWindow() {
+      this.$emit("hideWindow");
     },
   },
 };

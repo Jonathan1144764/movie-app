@@ -9,8 +9,6 @@
           @showFavourites="showFavourites"
           @showToWatch="showToWatch"
         ></ListWindowButtons>
-        <!-- <p>You have {{ moviesFavourited }} favourite movies.</p>
-        <p>You have {{ moviesToWatch }} you want to watch.</p> -->
       </div>
     </div>
   </header>
@@ -30,6 +28,7 @@
     @removeFromWatchlist="removeFromWatchlist"
     @removeFromFavourites="removeFromFavourites"
     @addRating="addRating"
+    @hideWindow="hideFavouritesWindow"
   ></MovieFavouriteList>
   <MovieWatchlist
     :moviesToWatchList="moviesToWatchList"
@@ -38,6 +37,7 @@
     @addToFavourites="addToFavourites"
     @removeFromFavourites="removeFromFavourites"
     @addRating="addRating"
+    @hideWindow="hideToWatchWindow"
   ></MovieWatchlist>
 </template>
 
@@ -149,6 +149,12 @@ export default {
     },
     showToWatch() {
       this.toWatchShown = true;
+    },
+    hideFavouritesWindow() {
+      this.favouritesShown = false;
+    },
+    hideToWatchWindow() {
+      this.toWatchShown = false;
     },
   },
 };

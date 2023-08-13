@@ -4,6 +4,7 @@
     :class="{ favouritesShown: favouritesShown }"
   >
     <div class="container">
+      <ExitWindowButton @hide-window="hideWindow"></ExitWindowButton>
       <h2>Favourite Movies</h2>
       <div class="movie-list-grid">
         <MovieItem
@@ -22,6 +23,7 @@
 
 <script>
 import MovieItem from "./MovieItem.vue";
+import ExitWindowButton from "./ExitWindowButton.vue";
 
 export default {
   name: "MovieFavouriteList",
@@ -41,6 +43,7 @@ export default {
   },
   components: {
     MovieItem,
+    ExitWindowButton,
   },
   methods: {
     addToWatchlist(id) {
@@ -54,6 +57,9 @@ export default {
     },
     addRating(id, rating) {
       this.$emit("addRating", id, rating);
+    },
+    hideWindow() {
+      this.$emit("hideWindow");
     },
   },
 };
