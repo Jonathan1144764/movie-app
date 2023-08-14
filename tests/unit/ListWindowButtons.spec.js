@@ -18,14 +18,14 @@ describe("ListWindowButtons", () => {
       "3 movies you want to watch"
     );
   });
-  it("emits an event to show fvaourites list", async () => {
+  it("emits an event to show fvaourites list when favourites button is clicked", async () => {
     const wrapper = shallowMount(ListWindowButtons);
-    await wrapper.vm.showFavourites();
-    expect(wrapper.emitted().showFavourites[0][0]).toBe(undefined);
+    await wrapper.findAll("button")[0].trigger("click");
+    expect(wrapper.emitted().showFavourites[0][0]).toBe(true);
   });
-  it("emits an event to show watchlist", async () => {
+  it("emits an event to show watchlist when watchlist button is clicked", async () => {
     const wrapper = shallowMount(ListWindowButtons);
-    await wrapper.vm.showToWatch();
-    expect(wrapper.emitted().showToWatch[0][0]).toBe(undefined);
+    await wrapper.findAll("button")[1].trigger("click");
+    expect(wrapper.emitted().showToWatch[0][0]).toBe(true);
   });
 });

@@ -419,6 +419,7 @@ header {
   }
 
   h1 {
+    color: #e1c90a;
     font-size: 1.8rem;
     font-weight: 500;
   }

@@ -28,10 +28,10 @@ export default {
   },
   methods: {
     showFavourites() {
-      this.$emit("showFavourites");
+      this.$emit("showFavourites", true);
     },
     showToWatch() {
-      this.$emit("showToWatch");
+      this.$emit("showToWatch", true);
     },
   },
 };
