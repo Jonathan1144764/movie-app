@@ -21,9 +21,11 @@
       ></WatchlistButton>
     </div>
     <MovieDetailsButton @showDetails="showDetails"></MovieDetailsButton>
-    <div :class="{ detailsShown: isShown }" class="details-wrapper">
-      <MovieDetails :movie="movie" @hide-window="hideDetails"></MovieDetails>
-    </div>
+    <MovieDetails
+      :movie="movie"
+      :isShown="isShown"
+      @hide-window="hideDetails"
+    ></MovieDetails>
   </div>
 </template>
 

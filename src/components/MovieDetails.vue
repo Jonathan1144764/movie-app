@@ -1,6 +1,6 @@
 <template>
-  <ExitWindowButton @hide-window="hideWindow"></ExitWindowButton>
-  <div class="details">
+  <div class="details" :class="{ detailsShown: isShown }">
+    <ExitWindowButton @hide-window="hideWindow"></ExitWindowButton>
     <h3>{{ movie.title }}</h3>
     <p>{{ movie.year }} - {{ movie.director }}</p>
     <p>Rating: {{ ratingAverage }}</p>
@@ -14,6 +14,12 @@ import ExitWindowButton from "./ExitWindowButton.vue";
 export default {
   name: "MovieDetails",
   props: {
+    isShown: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
     movie: {
       type: Object,
       default() {

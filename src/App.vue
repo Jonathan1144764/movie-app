@@ -370,7 +370,6 @@ export default {
         if (this.movies[i].id == id) {
           this.movies[i].rating.push(rating);
         }
-        console.log(this.movies[i]);
       }
     },
     showFavourites() {
@@ -390,6 +389,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -397,6 +398,7 @@ export default {
 }
 
 body {
+  font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
 
@@ -409,15 +411,27 @@ header {
 
   .header-flex {
     height: 10vh;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
   }
 }
 
 section {
-  padding: 40px 0;
+  padding: 20px 0;
   text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
 }
 
 button {
@@ -444,11 +458,10 @@ button {
 }
 
 .movie-list-all {
-  padding-top: calc(10vh + 40px);
+  padding-top: calc(10vh + 20px);
   background: radial-gradient(#376186, #180e46);
 
   h2 {
-    margin-bottom: 1rem;
     color: #e1c90a;
   }
 }
@@ -459,26 +472,29 @@ button {
   grid-gap: 1.5rem;
 
   .movie {
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     background-color: #377fbf;
     box-shadow: 2px 5px 10px black;
     transition: all 0.2s linear;
+    position: relative;
 
     &:hover {
       transform: scale(1.1);
     }
 
     .movie-poster {
-      width: 100%;
+      width: 80%;
       height: 325px;
-      margin-bottom: 1rem;
+      margin: auto;
+      margin-bottom: 1.5rem;
       background-size: cover;
       background-position: center;
     }
 
     h3 {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
     }
 
     .star-rating-wrapper {
@@ -486,6 +502,8 @@ button {
     }
 
     .list-buttons {
+      width: 100%;
+      margin: auto;
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
@@ -505,23 +523,37 @@ button {
       border-radius: 10px;
     }
 
-    .details-wrapper {
+    .details {
+      width: 90%;
+      padding: 10px;
+      background-color: #180e46;
+      border-radius: 10px;
+      color: #fff;
       display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       transition: all 0.3s linear;
+
+      .exit-window-btn {
+        color: #e1c90a;
+      }
     }
 
-    .details p:nth-child(3) {
+    .details p:nth-child(4) {
       margin-bottom: 1rem;
+      color: #e1c90a;
     }
 
     .detailsShown {
       display: block;
-      animation: slide-down 0.5s linear;
+      animation: fade-in 0.5s linear;
     }
   }
 }
 
-@keyframes slide-down {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }
@@ -532,20 +564,16 @@ button {
 
 .favourite-movies-list,
 .movies-to-watch-list {
-  background: radial-gradient(#e1c90a, #aa8d11);
+  background: radial-gradient(#555, #222);
   position: absolute;
   top: 10vh;
   left: 100%;
   width: 100%;
   transition: all 0.5s linear;
 
-  .exit-window-btn {
-    right: -150px;
-  }
-
   h2 {
     margin-bottom: 1rem;
-    color: #180e46;
+    color: #e1c90a;
   }
 }
 
@@ -555,14 +583,11 @@ button {
 }
 
 .exit-window-btn {
-  padding: 6px 10px;
-  background-color: #180e46;
+  background: none;
   border: none;
-  border-radius: 50%;
   font-size: 1.2rem;
   color: #fff;
-  position: relative;
-  right: -150px;
+  float: right;
 }
 
 .star-rating-wrapper {
@@ -570,55 +595,146 @@ button {
   margin: auto;
   display: flex;
   justify-content: space-between;
-}
-.star {
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  cursor: pointer;
-  &:hover .star-inner {
-    background-color: yellow;
+
+  .star {
+    width: 36px;
+    height: 36px;
+    background-color: black;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    cursor: pointer;
+
+    &:hover .star-inner {
+      background-color: yellow;
+    }
+
+    .star-inner {
+      width: 32px;
+      height: 32px;
+      margin: auto;
+      margin-top: 2px;
+      background-color: #fff;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+    }
   }
 }
 
-.star-inner {
-  width: 36px;
-  height: 36px;
-  margin: auto;
-  margin-top: 2px;
-  background-color: #fff;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+@media screen and (min-width: 480px) {
+  header {
+    .header-flex {
+      flex-direction: row;
+    }
+  }
+
+  .movie-list-grid {
+    .movie {
+      .list-buttons {
+        width: 85%;
+      }
+    }
+  }
 }
 
-// #app {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-//   margin-top: 60px;
-// }
+@media screen and (min-width: 576px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .movie-list-all {
+    padding-top: calc(10vh + 40px);
+  }
+
+  .movie-list-grid {
+    .movie {
+      .details {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    h2 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .movie-list-grid {
+    .movie {
+      .list-buttons {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .movie-list-grid {
+    .movie {
+      .list-buttons {
+        width: 70%;
+        flex-direction: column;
+
+        button {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  header {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  section {
+    padding: 60px;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  .movie-list-all {
+    padding-top: calc(10vh + 60px);
+  }
+
+  .movie-list-grid {
+    .movie {
+      .list-buttons {
+        width: 100%;
+        flex-direction: row;
+
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
 </style>
