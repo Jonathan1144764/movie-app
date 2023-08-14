@@ -59,7 +59,7 @@ export default {
       this.$emit("addRating", id, rating);
     },
     hideWindow() {
-      this.$emit("hideWindow");
+      this.$emit("hideWindow", true);
     },
   },
 };
