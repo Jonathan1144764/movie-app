@@ -19,6 +19,11 @@ describe("MovieDetails.vue", () => {
     });
     expect(wrapper.find("h3").text()).toBe("Default");
   });
+  it("changes the class of containing div when isShown is true", async () => {
+    const wrapper = shallowMount(MovieDetails);
+    await wrapper.setProps({ isShown: true });
+    expect(wrapper.find(".details").classes()).toContain("detailsShown");
+  });
   it("listens for event to hide window and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieDetails);
     await wrapper.vm.hideWindow();
