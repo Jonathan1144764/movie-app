@@ -1,6 +1,5 @@
 <template>
   <div class="movie">
-    <!-- <img :src="movie.poster" alt="" /> -->
     <div
       class="movie-poster"
       :style="{ backgroundImage: 'url(' + movie.poster + ')' }"
@@ -93,22 +92,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-// .movie-poster {
-//   width: 100%;
-//   height: 400px;
-//   background-size: cover;
-//   background-position: center;
-// }
-
-// .btn {
-//   margin: 0 1rem;
-// }
-
-// .details-wrapper {
-//   display: none;
-// }
-// .detailsShown {
-//   display: block;
-// }
-</style>
+<style scoped lang="scss"></style>

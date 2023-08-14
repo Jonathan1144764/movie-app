@@ -1,5 +1,5 @@
 <template>
-  <button @click="hideWindow">X</button>
+  <button class="exit-window-btn" @click="hideWindow">X</button>
 </template>
 
 <script>
