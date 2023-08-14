@@ -65,11 +65,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.favourite-movies-list {
-  display: none;
-}
-.favouritesShown {
-  display: block;
-}
-</style>
+<style scoped lang="scss"></style>

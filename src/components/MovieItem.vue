@@ -1,6 +1,10 @@
 <template>
   <div class="movie">
-    <img :src="movie.poster" alt="" />
+    <!-- <img :src="movie.poster" alt="" /> -->
+    <div
+      class="movie-poster"
+      :style="{ backgroundImage: 'url(' + movie.poster + ')' }"
+    ></div>
     <h3>{{ movie.title }}</h3>
     <MovieRating :movie="movie" @addRating="addRating"></MovieRating>
     <div class="list-buttons">
@@ -90,18 +94,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
-img {
-  display: inline-block;
-}
+// .movie-poster {
+//   width: 100%;
+//   height: 400px;
+//   background-size: cover;
+//   background-position: center;
+// }
 
-.btn {
-  margin: 0 1rem;
-}
+// .btn {
+//   margin: 0 1rem;
+// }
 
-.details-wrapper {
-  display: none;
-}
-.detailsShown {
-  display: block;
-}
+// .details-wrapper {
+//   display: none;
+// }
+// .detailsShown {
+//   display: block;
+// }
 </style>

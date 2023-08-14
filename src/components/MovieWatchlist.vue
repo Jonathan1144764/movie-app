@@ -62,12 +62,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.movies-to-watch-list {
-  display: none;
-}
-
-.toWatchShown {
-  display: block;
-}
-</style>
+<style scoped lang="scss"></style>

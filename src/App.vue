@@ -63,7 +63,7 @@ export default {
           title: "Monty Python and the Holy Grail",
           year: 1975,
           director: "Terry Gilliam",
-          poster: "https://placehold.co/250x300/55ffcc/000",
+          poster: "https://flxt.tmsimg.com/assets/p629_p_v8_af.jpg",
           isFavourited: false,
           isToWatch: false,
           rating: [],
@@ -75,7 +75,8 @@ export default {
           title: "Jaws",
           year: 1975,
           director: "Steven Spielberg",
-          poster: "https://placehold.co/250x300/55ffcc/000",
+          poster:
+            "https://images.moviesanywhere.com/246283329b6fbec9158c89d2c8a76bfe/3f2f72c0-6820-413f-a347-173d330d27ed.jpg",
           isFavourited: false,
           isToWatch: false,
           rating: [],
@@ -167,13 +168,20 @@ export default {
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 header {
-  background-color: #000;
+  width: 100%;
+  background-color: #222;
   color: #fff;
+  position: fixed;
 }
 
 section {
   padding: 40px 0;
+  text-align: center;
 }
 
 button {
@@ -182,7 +190,7 @@ button {
 
 .container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -207,8 +215,8 @@ button {
 }
 
 .movie-list-all {
+  padding-top: calc(10vh + 40px);
   background: radial-gradient(#376186, #180e46);
-  text-align: center;
 
   h2 {
     margin-bottom: 1rem;
@@ -217,8 +225,79 @@ button {
 
 .movie-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-gap: 1.5rem;
+
+  .movie {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #377fbf;
+    box-shadow: 2px 5px 10px black;
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .movie-poster {
+      width: 100%;
+      height: 325px;
+      margin-bottom: 1rem;
+      background-size: cover;
+      background-position: center;
+    }
+
+    h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .star-rating-wrapper {
+      margin-bottom: 1rem;
+    }
+
+    .list-buttons {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        padding: 5px 10px;
+        background-color: rgb(1, 75, 1);
+        border: none;
+        border-radius: 10px;
+      }
+    }
+
+    .details-btn {
+      padding: 5px 10px;
+      background-color: rgb(6, 170, 6);
+      border: none;
+      border-radius: 10px;
+    }
+
+    .details-wrapper {
+      display: none;
+    }
+
+    .detailsShown {
+      display: block;
+    }
+  }
+}
+
+.favourite-movies-list,
+.movies-to-watch-list {
+  background-color: #46340e;
+  position: absolute;
+  top: 10vh;
+  left: 100%;
+  width: 100%;
+  transition: all 0.5s linear;
+}
+
+.favouritesShown,
+.toWatchShown {
+  transform: translateX(-100%);
 }
 
 // #app {
