@@ -13,7 +13,7 @@ This project was inspired by letterboxd.com.
 
 Users will be presented with a list of movies that they can view. Each movie will have the option to view the movie's synopsis and rating,
 add that movie to the user's favourites list, add the movie to the user's watchlist, and rate the movie on a system of five stars.
-Viewing the movie details will reveal a container positioned on top of the movie card.
+Viewing the movie details will reveal a container positioned on top of the movie card. Buttons in the header will allow users to see their favourites or what movies they want to watch with panels that slide in.
 
 ## Project tests
 
