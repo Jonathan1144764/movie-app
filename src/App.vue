@@ -407,7 +407,7 @@ header {
   background-color: #222;
   color: #fff;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
 
   .header-flex {
     height: 10vh;
@@ -474,8 +474,8 @@ button {
 
   .movie {
     padding: 10px;
-    border-radius: 10px;
     background-color: #377fbf;
+    border-radius: 10px;
     box-shadow: 2px 5px 10px black;
     transition: all 0.2s linear;
     position: relative;
@@ -565,11 +565,11 @@ button {
 
 .favourite-movies-list,
 .movies-to-watch-list {
+  width: 100%;
   background: radial-gradient(#555, #222);
   position: absolute;
   top: 10vh;
   left: 100%;
-  width: 100%;
   transition: all 0.5s linear;
 
   h2 {
@@ -586,8 +586,8 @@ button {
 .exit-window-btn {
   background: none;
   border: none;
-  font-size: 1.2rem;
   color: #fff;
+  font-size: 1.2rem;
   float: right;
 }
 
