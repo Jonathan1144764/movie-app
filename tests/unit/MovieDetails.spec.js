@@ -27,6 +27,7 @@ describe("MovieDetails.vue", () => {
   it("listens for event to hide window and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieDetails);
     await wrapper.vm.hideWindow();
+    expect(wrapper.vm.hideWindow).toBeTruthy();
     expect(wrapper.emitted().hideWindow[0][0]).toBe(true);
   });
   it("computes the mean average rating of movie ratings if there are ratings", () => {
