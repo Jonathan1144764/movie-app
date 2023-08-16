@@ -22,37 +22,44 @@ describe("MovieItem.vue", () => {
   it("listens for an event to add the movie to favourites and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.addToFavourites(1);
+    expect(wrapper.vm.addToFavourites).toBeTruthy();
     expect(wrapper.emitted().addToFavourites[0][0]).toBe(1);
   });
   it("listens for an event to remove the movie from favourites and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.removeFromFavourites(1);
+    expect(wrapper.vm.removeFromFavourites).toBeTruthy();
     expect(wrapper.emitted().removeFromFavourites[0][0]).toBe(1);
   });
   it("listens for an event to add the movie to watchlist and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.addToWatchlist(1);
+    expect(wrapper.vm.addToWatchlist).toBeTruthy();
     expect(wrapper.emitted().addToWatchlist[0][0]).toBe(1);
   });
   it("listens for an event to remove the movie from watchlist and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.removeFromWatchlist(1);
+    expect(wrapper.vm.removeFromWatchlist).toBeTruthy();
     expect(wrapper.emitted().removeFromWatchlist[0][0]).toBe(1);
   });
   it("listens for an event that changes the boolean state of isShown to true when false", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.showDetails();
+    expect(wrapper.vm.showDetails).toBeTruthy();
     expect(wrapper.vm.isShown).toBe(true);
   });
   it("listens for an event that changes the boolean state of isShown to false when true", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.setData({ isShown: true });
     await wrapper.vm.hideDetails();
+    expect(wrapper.vm.hideDetails).toBeTruthy();
     expect(wrapper.vm.isShown).toBe(false);
   });
   it("listens for an event to add movie rating and emits an event in turn", async () => {
     const wrapper = shallowMount(MovieItem);
     await wrapper.vm.addRating(1, 2);
+    expect(wrapper.vm.addRating).toBeTruthy();
     expect(wrapper.emitted().addRating[0][1]).toBe(2);
   });
 });
